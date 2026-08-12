@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      width: 320px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: 12px;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    label { font-size: 11px; font-weight: bold; color: #555; display: block; margin-bottom: 4px; }
+    select, button {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 13px;
+    }
+    button {
+      background: #0e71eb;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover { background: #0b5cbe; }
+    textarea {
+      width: 100%;
+      height: 140px;
+      box-sizing: border-box;
+      font-size: 11px;
+      padding: 6px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+      margin-bottom: 8px;
+    }
+    #status { font-size: 11px; color: #666; word-wrap: break-word; }
+    .secondary-btn {
+      background: #6b7280;
+      font-size: 11px;
+      padding: 6px;
+      margin-top: 8px;
+    }
+    .secondary-btn:hover { background: #4b5563; }
+    hr { border: none; border-top: 1px solid #ddd; margin: 12px 0; }
+  </style>
+</head>
+<body>
+  <button id="scanBtn">1. Scan Page & Frames</button>
+
+  <label for="modeSelect">Extraction Strategy:</label>
+  <select id="modeSelect">
+    <option value="rawBody">Full Raw Text (Isolated Summary)</option>
+    <option value="targeted">Targeted (Zoom Doc Selectors)</option>
+    <option value="structured">Structured (Headings & Paragraphs)</option>
+    <option value="selected">User Highlighted Text</option>
+  </select>
+
+  <label for="previewArea">Extracted Text Preview (Editable):</label>
+  <textarea id="previewArea" placeholder="Click 'Scan Page & Frames' to pull text here..."></textarea>
+
+  <button id="downloadBtn">2. Download Preview Text</button>
+  <div id="status"></div>
+  
+  <hr>
+  <label for="importFile" class="secondary-btn" style="display:block; text-align:center; cursor:pointer;">Import Existing Downloads</label>
+  <input type="file" id="importFile" accept=".txt,.json,.md" multiple style="display:none">
+  <div id="importStatus" style="font-size:11px; color:#666; margin-top:4px;"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

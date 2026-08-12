@@ -1,0 +1,16 @@
+{
+  "name": "zoom-summary-downloader",
+  "version": "1.4.0",
+  "description": "A Chrome extension that downloads Zoom meeting summaries directly to your local Downloads folder with proper naming and tracking.",
+  "main": "background.js",
+  "scripts": {
+    "lint": "eslint *.js",
+    "lint:fix": "eslint *.js --fix"
+  },
+  "keywords": ["chrome-extension", "zoom", "meeting-summary", "download"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^10.8.1"
+  }
+}
